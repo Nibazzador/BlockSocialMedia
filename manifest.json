@@ -16,6 +16,7 @@
     }
   ],
   "permissions": ["storage"],
+  "incognito": "split",
   "action": {
     "default_popup": "popup.html"
   }
