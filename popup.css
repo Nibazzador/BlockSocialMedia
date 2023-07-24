@@ -1,0 +1,15 @@
+body {
+  width: 200px;
+}
+
+button {
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 5px 5px 3px 1px rgba(0, 0, 0, 0.25);
+}
+
+button:active {
+  box-shadow: none;
+}

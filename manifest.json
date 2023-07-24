@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "BlockSocialMedia",
+  "version": "1.0.0",
+  "web_accessible_resources": [
+    {
+      "resources": ["blocked.html", "break.html"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

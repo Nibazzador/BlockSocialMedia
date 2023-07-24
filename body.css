@@ -1,0 +1,21 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+
+  padding: 1rem;
+  color: white;
+  text-align: center;
+}
+h1 {
+  font-size: 10vh;
+}
+
+p {
+  font-size: 5vh;
+}
+span {
+  font-size: 1.5vh;
+}
