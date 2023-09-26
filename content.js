@@ -17,7 +17,9 @@ const choices = [
   chrome.runtime.getURL("blocked.html"),
   chrome.runtime.getURL("blocked.html"),
   "piped.video/channel/UC9k--dE_UE0Faxzgb_DDkYQ",
-  "reddit.baby",
+  chrome.runtime.getURL("blocked.html"),
+  "areena.yle.fi",
+  "www.hltv.org",
 ];
 
 if (socialMediaList.includes(window.location.hostname)) {
