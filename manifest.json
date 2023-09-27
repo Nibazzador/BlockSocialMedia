@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "web_accessible_resources": [
     {
-      "resources": ["blocked.html", "break.html"],
+      "resources": ["privacyBlocked.html", "break.html", "blockedAlways.html"],
       "matches": ["<all_urls>"]
     }
   ],

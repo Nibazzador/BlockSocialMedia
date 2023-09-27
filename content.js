@@ -5,40 +5,47 @@ const socialMediaList = [
   "twitter.com",
   "www.instagram.com",
   "www.twitch.tv",
-  "blast.tv",
   "www.reddit.com",
 ];
 
 const choices = [
   "piped.video",
   "proxitok.pabloferreiro.es",
-  chrome.runtime.getURL("blocked.html"),
+  "privacyBlocked.html",
   "nitter.net",
-  chrome.runtime.getURL("blocked.html"),
-  chrome.runtime.getURL("blocked.html"),
-  "piped.video/channel/UC9k--dE_UE0Faxzgb_DDkYQ",
-  chrome.runtime.getURL("blocked.html"),
-  "areena.yle.fi",
-  "www.hltv.org",
+  "privacyBlocked.html",
+  "privacyBlocked.html",
+  "privacyBlocked.html",
 ];
+
+const blockedChoice = ["areena.yle.fi", "www.hltv.org", "blast.tv"];
+
+const blockedAlways = ["www.gamesgames.com", "www.y8.com"];
 
 if (socialMediaList.includes(window.location.hostname)) {
   const i = socialMediaList.indexOf(window.location.hostname);
   const url = window.location.toString();
   let newUrl = "";
-  if (choices[i] === chrome.runtime.getURL("blocked.html")) {
-    newUrl = chrome.runtime.getURL("blocked.html");
+  if (choices[i] === "privacyBlocked.html") {
+    newUrl = chrome.runtime.getURL("privacyBlocked.html");
   } else {
     newUrl = url.replace(socialMediaList[i], choices[i]);
   }
   window.location.assign(newUrl);
 }
 
-if (choices.includes(window.location.hostname)) {
+if (
+  choices.includes(window.location.hostname) ||
+  blockedChoice.includes(window.location.hostname)
+) {
   chrome.storage.local.get(["block"]).then((result) => {
     resultBoolean = result.block;
     if (resultBoolean) {
       window.location.assign(chrome.runtime.getURL("break.html"));
     }
   });
+}
+
+if (blockedAlways.includes(window.location.hostname)) {
+  window.location.assign(chrome.runtime.getURL("blockedAlways.html"));
 }
