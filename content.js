@@ -2,6 +2,7 @@ const socialMediaList = [
   "www.youtube.com",
   "www.tiktok.com",
   "www.facebook.com",
+  "fi-fi.facebook.com",
   "twitter.com",
   "www.instagram.com",
   "www.twitch.tv",
@@ -12,6 +13,7 @@ const choices = [
   "piped.video",
   "proxitok.pabloferreiro.es",
   "privacyBlocked.html",
+  "privacyBlocked.html",
   "nitter.net",
   "privacyBlocked.html",
   "privacyBlocked.html",
@@ -20,7 +22,12 @@ const choices = [
 
 const blockedChoice = ["areena.yle.fi", "www.hltv.org", "blast.tv"];
 
-const blockedAlways = ["www.gamesgames.com", "www.y8.com"];
+const blockedAlways = [
+  "www.gamesgames.com",
+  "www.y8.com",
+  "www.pomu.com",
+  "www.1001pelit.com",
+];
 
 if (socialMediaList.includes(window.location.hostname)) {
   const i = socialMediaList.indexOf(window.location.hostname);
