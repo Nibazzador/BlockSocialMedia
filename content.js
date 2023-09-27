@@ -12,12 +12,12 @@ const socialMediaList = [
 const choices = [
   "piped.video",
   "proxitok.pabloferreiro.es",
-  "privacyBlocked.html",
-  "privacyBlocked.html",
+  "privacyBlocked",
+  "privacyBlocked",
   "nitter.net",
-  "privacyBlocked.html",
-  "privacyBlocked.html",
-  "privacyBlocked.html",
+  "privacyBlocked",
+  "privacyBlocked",
+  "privacyBlocked",
 ];
 
 const blockedChoice = ["areena.yle.fi", "www.hltv.org", "blast.tv"];
@@ -27,13 +27,15 @@ const blockedAlways = [
   "www.y8.com",
   "www.pomu.com",
   "www.1001pelit.com",
+  "play2048.co",
+  "www.vsco.co",
 ];
 
 if (socialMediaList.includes(window.location.hostname)) {
   const i = socialMediaList.indexOf(window.location.hostname);
   const url = window.location.toString();
   let newUrl = "";
-  if (choices[i] === "privacyBlocked.html") {
+  if (choices[i] === "privacyBlocked") {
     newUrl = chrome.runtime.getURL("privacyBlocked.html");
   } else {
     newUrl = url.replace(socialMediaList[i], choices[i]);
