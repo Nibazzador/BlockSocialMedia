@@ -24,5 +24,7 @@ button.addEventListener("click", () => {
     let setBoolean = resultBoolean === true ? false : true;
     chrome.storage.local.set({ block: setBoolean });
     renderElements(setBoolean);
+    const date = Date.now();
+    chrome.storage.local.set({ somesAllowed: date });
   });
 });

@@ -47,11 +47,17 @@ if (
   choices.includes(window.location.hostname) ||
   blockedChoice.includes(window.location.hostname)
 ) {
-  chrome.storage.local.get(["block"]).then((result) => {
-    resultBoolean = result.block;
-    if (resultBoolean) {
-      window.location.assign(chrome.runtime.getURL("break.html"));
+  chrome.storage.local.get(["somesAllowed"]).then((somesAllowed) => {
+    if ((Date.now() - somesAllowed.somesAllowed) / 3600000 > 1) {
+      chrome.storage.local.set({ block: true });
     }
+    chrome.storage.local.get(["block"]).then((result) => {
+      resultBoolean = result.block;
+
+      if (resultBoolean) {
+        window.location.assign(chrome.runtime.getURL("break.html"));
+      }
+    });
   });
 }
 
