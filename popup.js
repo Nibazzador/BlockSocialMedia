@@ -4,12 +4,12 @@ const h1 = document.querySelector("h1");
 const renderElements = (boolean) => {
   if (boolean === true) {
     document.body.style.backgroundColor = "#933";
-    h1.textContent = "Social Media sites are currently blocked!";
-    button.innerHTML = "Use Social Media sites!";
+    h1.textContent = "Optional sites are currently blocked!";
+    button.innerHTML = "Use optional sites!";
   } else {
     document.body.style.backgroundColor = "#363";
-    h1.textContent = `Social Media sites are currently allowed!`;
-    button.innerHTML = "Block Social Media sites!";
+    h1.textContent = `Optional sites are currently allowed!`;
+    button.innerHTML = "Block optional sites!";
   }
 };
 
